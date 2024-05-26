@@ -1,0 +1,52 @@
+@backend_HostAddress = http://localhost:5280
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyMSIsImp0aSI6IjI1OTkwMzM1LWM0ZDktNGEwMy04OWVjLWQ3ODQ4NDQ3Y2FmMiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiNjY1MjIzNThkMjQ3OWRjYzcwOTdkNzZlIiwiZXhwIjoxNzE2NjYwODMyLCJpc3MiOiJTaG9wcGVyIiwiYXVkIjoiU2hvcHBlciJ9.vER5_MqLsgvZEVspgvVk5eph_gBIzVAZbXBivZqqdGU
+
+### get all products
+GET {{backend_HostAddress}}/api/products/
+Accept: application/json
+
+
+### get product by id
+GET {{backend_HostAddress}}/api/products/665223cbd2479dccgd7d76f
+Accept: application/json
+
+### create product
+POST {{backend_HostAddress}}/api/products/
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "name": "Product 2",
+  "price": 100,
+  "description": "Product 2 description",
+  "category": "Category 2",
+  "stock_quantity": 50,
+  "image_urls": ["http://image1.jpg", "http://image2.jpg"]
+}
+
+
+### register user
+POST {{backend_HostAddress}}/api/auth/register
+Content-Type: application/json
+
+{
+    "password_hash": "password1",
+    "username": "user3",
+    "email": "user3@email.com",
+    "first_name": "User",
+    "last_name": "One"
+}
+
+### login user
+POST {{backend_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+    "password": "password1",
+    "username": "user1"
+}
+
+### get all users
+GET {{backend_HostAddress}}/api/users/
+Accept: application/json
+Authorization: Bearer {{token}}
