@@ -2,7 +2,7 @@
 @token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyMSIsImp0aSI6IjI1OTkwMzM1LWM0ZDktNGEwMy04OWVjLWQ3ODQ4NDQ3Y2FmMiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiNjY1MjIzNThkMjQ3OWRjYzcwOTdkNzZlIiwiZXhwIjoxNzE2NjYwODMyLCJpc3MiOiJTaG9wcGVyIiwiYXVkIjoiU2hvcHBlciJ9.vER5_MqLsgvZEVspgvVk5eph_gBIzVAZbXBivZqqdGU
 
 ### get all products
-GET {{backend_HostAddress}}/api/products/
+GET {{backend_HostAddress}}/api/product/
 Accept: application/json
 
 
@@ -35,6 +35,7 @@ Content-Type: application/json
     "email": "user3@email.com",
     "first_name": "User",
     "last_name": "One"
+    fasdf
 }
 
 ### login user

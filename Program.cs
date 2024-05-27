@@ -4,6 +4,10 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using ShopperBackend.Middlewares;
+using ShopperBackend.Exceptions;
+using Microsoft.AspNetCore.Mvc; // Add this using directive
+
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +19,7 @@ builder.Services.AddSingleton<UsersService>();
 builder.Services.AddSingleton<IProductsService, ProductsService>();
 
 // builder.Services.AddExceptionHandler<CustomExceptionHandler>();
+
 
 builder.Services.AddControllers();
 
@@ -39,7 +44,6 @@ builder.Services.AddAuthentication(options =>
 
 var app = builder.Build();
 
-
 app.Use(async (context, next) =>
 {
     var loggerFactory = context.RequestServices.GetRequiredService<ILoggerFactory>();
@@ -49,7 +53,7 @@ app.Use(async (context, next) =>
 });
 
 //app.UseMiddleware<CustomErrorHandlingMiddleware>();
-app.UseMiddleware<CustomErrorHandlingMiddleware>();
+app.UseMiddleware<CustomExceptionHandlerMiddleware>();
 app.UseHttpsRedirection();
 app.UseAuthorization();
 

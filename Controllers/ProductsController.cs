@@ -2,7 +2,7 @@ using ShopperBackend.Models;
 using ShopperBackend.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
-using ShopperBackend.Exceptions;
+// using ShopperBackend.Exceptions;
 
 namespace ShopperBackend.Controllers
 {
@@ -17,11 +17,11 @@ namespace ShopperBackend.Controllers
             _productsService = productsService;
         }
 
-        [HttpGet("notfound")]
-        public ActionResult GetNotFound()
-        {
-            throw new CustomNotFoundException("This is custom a KeyNotFoundException.");
-        }
+        // [HttpGet("notfound")]
+        // public ActionResult GetNotFound()
+        // {
+        //     throw new CustomNotFoundException("This is custom a KeyNotFoundException.");
+        // }
 
         [HttpGet]
         public async Task<ActionResult<List<Product>>> GetProducts()
